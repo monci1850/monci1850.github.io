@@ -27,7 +27,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.122.0'  # 你也可以根据自己 hugo 版本调整
+          hugo-version: '0.147.2'
+          extended: true
 
       - name: Build
         run: hugo --minify
@@ -37,4 +38,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          publish_branch: gh-pages  # 👈 就是这句：部署到 gh-pages 分支
+          publish_branch: gh-pages
